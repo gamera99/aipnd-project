@@ -12,23 +12,19 @@ who helped me troubleshoot my final project Part 2 (train.py and predict.py)
 My final project consists of these files:
 
 - train.py
-
-   -- This trains a network using either pretrained networks densenet121 or vgg16.
-
-   -- It trains the network and saves a checkpoint file for use in predict.py.
-
-   -- Sample command line is:
-
-   -- python train.py --arch "densenet121" --hidden_units 512 --epochs 5 --gpu "True"
+   - This trains a network using either pretrained networks densenet121 or vgg16.
+   - It trains the network and saves a checkpoint file for use in predict.py.
+   - Sample command line is:
+   - python train.py --arch "densenet121" --hidden_units 512 --epochs 5 --gpu "True"
 
 - predict.py
-   -- This predicts the highest probability flower names for a test image.
-   -- It uses a saved checkpoint file that was created in train.py above.
-   -- Sample command line is:
-   -- python predict.py --image "flowers/test/50/image_06320.jpg" --gpu=True
+   - This predicts the highest probability flower names for a test image.
+   - It uses a saved checkpoint file that was created in train.py above.
+   - Sample command line is:
+   - python predict.py --image "flowers/test/50/image_06320.jpg" --gpu=True
 
 - test_checkpoint.py
-    -- I built a new executable called test_checkpoint.py that tests my saved checkpoint file against the test database,
+    - I built a new executable called test_checkpoint.py that tests my saved checkpoint file against the test database,
     at the suggestion of my mentor Mr. Himanshu M.
 
 My project contains screenshots of logging output for train.py, predict.py, and test_checkpoint.py.
