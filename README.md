@@ -1,18 +1,24 @@
 # AI Programming with Python Project
 
 Project code for Udacity's AI Programming with Python Nanodegree program. In this project, students first develop code for an image classifier built with PyTorch, then convert it into a command line application.
-
+#-----------------------
 Nelson Walker
+
 01/17/2022
 
 I would like to thank my mentor Mr. Himanshu M
 who helped me troubleshoot my final project Part 2 (train.py and predict.py)
 
 My final project consists of these files:
+
 train.py
+
    This trains a network using either pretrained networks densenet121 or vgg16.
+
    It trains the network and saves a checkpoint file for use in predict.py.
+
    Sample command line is:
+   
    python train.py --arch "densenet121" --hidden_units 512 --epochs 5 --gpu "True"
 
 predict.py
