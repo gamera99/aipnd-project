@@ -27,7 +27,7 @@ My final project consists of these files:
     - I built a new executable called test_checkpoint.py that tests my saved checkpoint file against the test database,
     at the suggestion of my mentor Mr. Himanshu M.
 
-My project contains screenshots of logging output for train.py, predict.py, and test_checkpoint.py.
+My project folder contains screenshots of logging output for train.py, predict.py, and test_checkpoint.py.
 
 # Notes
 - In my Part 1 Jupyter NB ipynb, I was able to train my network to over 83% accuracy on the validation dataset.
