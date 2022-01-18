@@ -33,7 +33,7 @@ My project contains screenshots of logging output for train.py, predict.py, and 
 - In my Part 1 Jupyter NB ipynb, I was able to train my network to over 83% accuracy on the validation dataset.
 - In my Part 2 train.py, I used my same code but was unable to train to much better than 53% accuracy.
 - I changed many parameters, learning rates, added dropouts etc.
-- I built a new executable called test_checkpoint.py that tested my saved checkpoint file against the test database,
+- I built a new executable called test_checkpoint.py that tested my saved checkpoint file against the test dataloader,
 at the suggestion of my mentor Mr. Himanshu M.
 
 
