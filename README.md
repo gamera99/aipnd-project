@@ -21,7 +21,7 @@ My final project consists of these files:
    - This predicts the highest probability flower names for a test image.
    - It uses a saved checkpoint file that was created in train.py above.
    - Sample command line is:
-   - python predict.py --image "flowers/test/50/image_06320.jpg" --gpu=True
+   - python predict.py --image "flowers/test/50/image_06320.jpg" --gpu "True"
 
 - test_checkpoint.py
     - I built a new executable called test_checkpoint.py that tests my saved checkpoint file against the test database,
