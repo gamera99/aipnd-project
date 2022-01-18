@@ -2,12 +2,12 @@
 
 Project code for Udacity's AI Programming with Python Nanodegree program. In this project, students first develop code for an image classifier built with PyTorch, then convert it into a command line application.
 
-Nelson Walker
+Student:  Nelson Walker
 
-01/17/2022
+Date:  01/17/2022
 
-I would like to thank my mentor Mr. Himanshu M
-who helped me troubleshoot my final project Part 2 (train.py and predict.py)
+I would like to thank my mentor Mr. Himanshu M who helped me troubleshoot my final project Part 2 (train.py and predict.py)
+I would like to thank my mentor Mr. Survesh C for giving me advice about submitting my project.
 
 My final project consists of these files:
 
@@ -37,9 +37,10 @@ My project contains screenshots of logging output for train.py, predict.py, and 
 at the suggestion of my mentor Mr. Himanshu M.
 
 
-I learned a lot in this Udacity course from the professors, my mentor Mr. Himanshu M.  When I was having trouble I analyzed some github final projects and learned new ideas for configuring my project.
+I learned a lot in this Udacity course from the professors and my mentor Mr. Himanshu M.  
+When I was having trouble I analyzed several github projects and learned new ideas for constructing functions, modularizing, and configuring my project.
 
-Thank you very much
+Thank you very much to Udacity and my mentors,
 
 Nelson Walker
 
