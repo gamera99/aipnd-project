@@ -8,7 +8,7 @@ Model hyperparameters	The training script allows users to set hyperparameters fo
 Training with GPU	The training script allows users to choose training the model on a GPU
 
 python train.py --arch "vgg16" --hidden_units 512 --epochs 1 --gpu "True"
-python train.py --arch "densenet121" --hidden_units 512 --epochs 3 --gpu "True"
+python train.py --arch "densenet121" --hidden_units 512 --epochs 4 --gpu "True"
 python train.py --arch "densenet121" --hidden_units 512 --epochs 5 --gpu "True"
 python train.py --arch "densenet121" --hidden_units 512 --epochs 2 --gpu "False"
 python train.py --arch "densenet121" --hidden_units 512 --epochs 1 --gpu "True"
@@ -99,8 +99,8 @@ def get_data(data_dir):
         }
     #change batch sizes from 64 to 32 for trainign & validation due to CUDA out of memory error
     img_dataloaders = {
-            'training': torch.utils.data.DataLoader(img_datasets['training'], batch_size = 16, shuffle=True),
-            'validation': torch.utils.data.DataLoader(img_datasets['validation'], batch_size = 16, shuffle=True),
+            'training': torch.utils.data.DataLoader(img_datasets['training'], batch_size = 64, shuffle=True),
+            'validation': torch.utils.data.DataLoader(img_datasets['validation'], batch_size = 32, shuffle=True),
             'testing': torch.utils.data.DataLoader(img_datasets['testing'], batch_size = 16, shuffle=False)
         }
 
@@ -146,7 +146,8 @@ def train_model(model, img_datasets, img_dataloaders, epochs, gpu, optimizer, cr
 
     if gpu == True:
         device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-        print("CUDA device: {}".format(torch.cuda.get_device_name(0)))
+        if torch.cuda.is_available():
+            print("CUDA device: {}".format(torch.cuda.get_device_name(0)))
     else:
         device = 'cpu'
 
@@ -201,8 +202,9 @@ def validation_check(dataloader, model, criterion, device):
     #in my jupyter notebook ipnyb for the final project,
     # I put this validation check inside the epoch loop
     # but I was having trouble trying to get my network to train properly
+    # I studied several other projects in GitHub
     # and I found that using a validation function made the code cleaner
-    # and easier to read
+    # and easier to read.  I used their function as an idea for mine
 
     running_validation_loss = 0
     accuracy = 0
@@ -216,8 +218,8 @@ def validation_check(dataloader, model, criterion, device):
         output = model.forward(inputs)
         running_validation_loss += criterion(output, labels).item()
         ps = torch.exp(output)
-        doesequal = (labels.data == ps.max(1)[1])
-
+        # from my mentor Mr. Himanshu M
+        doesequal = (labels.data == ps.max(dim = 1)[1])
         accuracy += doesequal.type_as(torch.FloatTensor()).mean()
 
     return (running_validation_loss/lendataloader),(accuracy/lendataloader)
@@ -282,7 +284,7 @@ def main():
     #when training complete, save checkpoint
     model.to('cpu')
 
-    chkpoint_save_path = 'checkpoint_cmdline.pth'
+    chkpoint_save_path = 'checkpoint_cmdline3.pth'
     save_chkpoint(model, optimizer, criterion, classifier, args, chkpoint_save_path)
     print('--------------------------------------------------')
     print(f'Checkpoint saved to file: {chkpoint_save_path}')

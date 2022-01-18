@@ -1,5 +1,5 @@
 #written in Atom
-#Nelson Walker started 01/16/2022
+#Nelson Walker 01/17/2022
 #All of these functions were based on my prediction routines in my ipnyb jupyter notebook project
 
 """ rubric for predict.py
@@ -123,7 +123,8 @@ def predict(image_path, model, topk, gpu):
 
     if gpu == True:
         device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-        print("CUDA device: {}".format(torch.cuda.get_device_name(0)))
+        if torch.cuda.is_available():
+            print("CUDA device: {}".format(torch.cuda.get_device_name(0)))
     else:
         device = 'cpu'
     model.to(device)
